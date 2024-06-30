@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gerador de Currículos</title>
+        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            body {
+                background-color: rgb(231, 231, 231); /* Cor de fundo azul clara */
+            }
+            .btn-primary {
+                background-color: blue; /* Cor azul para os botões primários */
+                border-color: rgb(4, 4, 88); /* Cor da borda azul */
+            }
+            .btn-primary:hover {
+                background-color: darkblue; /* Cor azul escura ao passar o mouse */
+                border-color: rgb(4, 4, 58); /* Cor da borda azul escura */
+            }
+            .btn-success {
+                background-color: blue; /* Cor azul para o botão de sucesso */
+                border-color: rgb(4, 4, 70); /* Cor da borda azul */
+            }
+            .btn-success:hover {
+                background-color: darkblue; /* Cor azul escura ao passar o mouse */
+                border-color: rgb(4, 4, 87); /* Cor da borda azul escura */
+            }
+        </style>
+    </head>
+<body>
+
+<div class="container mt-5">
+    <h1>Dados Pessoais</h1>
+    <form id="curriculo-form" action="process.php" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+        </br>
+            <label for="nome">Nome Completo:</label>
+                   <input type="text" id="nome" name="nome" class="form-control" required>
+        </div>
+
+        <div>
+            <label for="email">E-mail:</label>
+                <input type="text" id="E-mail" name="E-mail" class="form-control" required>
+
+            <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" name="telefone" class="form-control" required>
+            </div>
+
+         <div>
+                <label for="data_nascimento">Data de nascimento:</label>
+                    <input type="date" id="data_nascimento" name="data_nascimento" class="form-control" required>
+
+                <label for="idade">Idade</label>
+                    <input type="number" id="idade" name="idade" class="form-control" readonly>
+
+    <div class="form-group">
+        <label for="foto">Foto:</label>
+        <input type="file" id="foto" name="foto" class="form-control">
+    </div>
+
+    <div> 
+    <h1>Sumario Profissional</h1>
+    </br>
+        <div class="form-group" id="historico_educacional" class="historico">
+            <label for="texto">Formação:</label>
+                    <input type="text" name="historico_formação[]" placeholder="formação" class="form-control" required>
+                </br>
+                    <input type="text" name="historico_instituição[]" placeholder="Instituição" class="form-control" required>
+                </br>
+                    <input type="date" name="historico_inicio[]" placeholder="Data de Início" class="form-control" required>
+                </br>
+                    <input type="date" name="historico_fim[]" placeholder="Data de Fim" class="form-control">
+        </div>  
+                    <button type="button" id="add-historico" class="btn btn-primary">ADICIONAR FORMAÇÃO</button>
+         </div>
+        </br>
+        <div class="form-group" id="experiencias" class="experiencia">
+            <label for="experiencia">Experiências:</label>
+                    <input type="text" name="experiencia_função[]" placeholder="função" class="form-control" required>
+                </br>
+                    <input type="text" name="experiencia_empresa[]" placeholder="Empresa" class="form-control" requir>
+                </br>
+                    <input type="date" name="experiencia_inicio[]" placeholder="Data de Início" class="form-control" required>
+                </br>
+                    <input type="date" name="experiencia_fim[]" placeholder="Data de Fim" class="form-control">
+        </div>
+            <button type="button" id="add-experiencia" class="btn btn-primary">ADICIOCAR EXPERIÊNCIA</button>
+         </div>
+        </br>
+            <div class="form-group" id="idiomas" class="idiomas">
+                <label for="idiomas">Idiomas: </label>
+                <input type="text" name="idiomas[]" placeholder="idiomas" class="form-control" required>
+             </div>
+               <button type="button" id="add-idiomas" class="btn btn-primary">ADICIONAR IDIOMA</button>
+            </br></br>
+             <div class="form-group" id="competencias" class="competencias">
+                <label for="competencias">Competências: </label>
+                <input type="text" name="competencias[]" placeholder="habilidade" class="form-control" required>
+             </div>
+                <button type="button" id="add-competencias" class="btn btn-primary">ADICIONAR COMPETÊNCIA</button>
+            </br></br>
+            <div class="form-group" id="objetivo" class="objetivo">
+                <label for="objetivo">Objetivo:</label>
+                    <input type="text" id="objetivo" name="objetivo" class="form-control" required>
+            </div>
+        </br>
+            <div>
+                <button type="submit" class="btn btn-success">Gerar Currículo</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="estilo.js"></script>
+</body>
+</html>
+
+
+
